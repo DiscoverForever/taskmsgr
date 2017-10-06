@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CoreModule } from './core/core.module';
+import { MdSidenavModule } from '@angular/material';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -9,7 +10,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    CoreModule
+    CoreModule,
+    MdSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
