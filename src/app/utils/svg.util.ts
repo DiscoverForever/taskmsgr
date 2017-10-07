@@ -1,16 +1,18 @@
-import { MdIconRegistry } from "@angular/material";
-import { DomSanitizer } from "@angular/platform-browser";
+import {MdIconRegistry} from '@angular/material';
+import {DomSanitizer} from '@angular/platform-browser';
 
 /**
  * 加载svg
  * @export
- * @param {MdIconRegistry} ir 
- * @param {DomSanitizer} ds 
+ * @param {MdIconRegistry} ir
+ * @param {DomSanitizer} ds
  */
 export function loadSvgResources(ir: MdIconRegistry, ds: DomSanitizer) {
   const imgDir = 'assets/img';
-  const sidebarDir = 'assets/img/sidebar';
-  const dayDir = 'assets/img/days';
+  const sidebarDir = `${imgDir}/sidebar`;
+  const dayDir = `${imgDir}/days`;
+  const avatarDir = `${imgDir}/avatar`;
+  ir.addSvgIconSetInNamespace('avatars', ds.bypassSecurityTrustResourceUrl(`${avatarDir}/avatars.svg`));
   ir.addSvgIcon('day', ds.bypassSecurityTrustResourceUrl(`${sidebarDir}/day.svg`));
   ir.addSvgIcon('month', ds.bypassSecurityTrustResourceUrl(`${sidebarDir}/month.svg`));
   ir.addSvgIcon('week', ds.bypassSecurityTrustResourceUrl(`${sidebarDir}/week.svg`));
