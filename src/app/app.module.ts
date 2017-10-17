@@ -4,6 +4,7 @@ import { CoreModule } from './core/core.module';
 import { MdSidenavModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginModule } from './login/login.module';
+import { ProjectModule } from './project/project.module';
 
 import { AppComponent } from './app.component';
 
@@ -16,6 +17,7 @@ import { AppComponent } from './app.component';
     CoreModule,
     AppRoutingModule,
     LoginModule,
+    ProjectModule,
     MdSidenavModule
   ],
   providers: [],
