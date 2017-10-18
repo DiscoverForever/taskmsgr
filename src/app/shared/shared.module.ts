@@ -9,7 +9,8 @@ import {
   MdListModule,
   MdSlideToggleModule,
   MdGridListModule,
-  MdDialogModule
+  MdDialogModule,
+  MdAutocompleteModule
 } from '@angular/material';
 
 
@@ -24,7 +25,8 @@ import {
     MdListModule,
     MdSlideToggleModule,
     MdGridListModule,
-    MdDialogModule
+    MdDialogModule,
+    MdAutocompleteModule
   ],
   exports: [
     CommonModule,
@@ -36,7 +38,8 @@ import {
     MdListModule,
     MdSlideToggleModule,
     MdGridListModule,
-    MdDialogModule
+    MdDialogModule,
+    MdAutocompleteModule
   ],
   declarations: []
 })

@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MdDialog } from '@angular/material';
 import { NewProjectComponent } from '../new-project/new-project.component';
+import { InvateComponent } from '../invate/invate.component';
 @Component({
   selector: 'app-project-list',
   templateUrl: './project-list.component.html',
@@ -26,7 +27,12 @@ export class ProjectListComponent implements OnInit {
   }
 
   openNewProjectDialog() {
-    const dialogRef = this.dialog.open(NewProjectComponent, {data: 'this is my dialog'})
+    const dialogRef = this.dialog.open(NewProjectComponent, {data: 'this is my dialog'});
+    dialogRef.afterClosed().subscribe(result => console.log(result));
+  }
+
+  lanuchInviteDialog() {
+    const dialogRef = this.dialog.open(InvateComponent, {data: 'this is my dialog'});
     dialogRef.afterClosed().subscribe(result => console.log(result));
   }
 
