@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Inject } from '@angular/core';
+import { MdDialog } from '@angular/material';
+import { NewProjectComponent } from '../new-project/new-project.component';
 @Component({
   selector: 'app-project-list',
   templateUrl: './project-list.component.html',
@@ -11,11 +12,22 @@ export class ProjectListComponent implements OnInit {
       name: '项目名称',
       coverImg: 'assets/img/covers/1_tn.jpg',
       desc: '项目描述'
-    }
+    },
+    {
+      name: '项目名称',
+      coverImg: 'assets/img/covers/1_tn.jpg',
+      desc: '项目描述'
+    },
+    
   ]
-  constructor() { }
+  constructor(private dialog: MdDialog) { }
 
   ngOnInit() {
+  }
+
+  openNewProjectDialog() {
+    const dialogRef = this.dialog.open(NewProjectComponent, {data: 'this is my dialog'})
+    dialogRef.afterClosed().subscribe(result => console.log(result));
   }
 
 }

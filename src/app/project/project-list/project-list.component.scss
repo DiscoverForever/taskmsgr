@@ -1,0 +1,17 @@
+.card {
+  height: 360px;
+  flex: 0 0 360;
+  width: 360px;
+  margin: 10px;
+}
+:host {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.fab-button {
+  position: absolute;
+  right: 32px;
+  bottom: 96px;
+  z-index: 998;
+}

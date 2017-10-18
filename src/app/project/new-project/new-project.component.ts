@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Inject } from '@angular/core';
+import { MD_DIALOG_DATA, MdDialogRef } from '@angular/material';
 @Component({
   selector: 'app-new-project',
   templateUrl: './new-project.component.html',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewProjectComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(MD_DIALOG_DATA) private data, private dialogRef: MdDialogRef<NewProjectComponent>) { }
 
   ngOnInit() {
+    console.log(JSON.stringify(this.data));
+  }
+
+  onClick() {
+    this.dialogRef.close('I reveived your msg');
   }
 
 }
